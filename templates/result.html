@@ -1,0 +1,40 @@
+<html>
+    <body >
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+              }
+            
+            tr:nth-child(even) {
+              background-color: rgba(150, 212, 212, 0.4);
+            }
+            
+            th:nth-child(even),td:nth-child(even) {
+              background-color: rgba(150, 212, 212, 0.4);
+            }
+            .tablestyle{
+              border-radius: 25px;
+            }
+            </style>
+        <table class='tablestyle' >
+            <h1 style='text-align: center;color:rgb(22, 61, 85);'>Flipkart Reviews</h1>
+            <tr id="mydiv" style="background-color:rgb(3, 77, 65);">
+               <th style="border:2px;border-style: double;">Product Name</th>
+               <th style="border:2px;border-style: double;">Customer Name</th>
+               <th style="border:2px;border-style: double;text-align: center;">Rating</th>
+               <th style="border:2px;border-style: double;">Comment</th>
+            </tr>
+            {% for rev in rev %}
+            <tr>
+                <td style="border:2px;border-style: double;text-align: center;">{{rev['Product_name']}}</td>
+                <td style="border:2px;border-style: double;text-align: center;">{{rev['Customer_name']}}</td>
+                <td style="border:2px;border-style: double;text-align: center;">{{rev['Rating']}}</td>
+                <td style="border:2px;border-style: double;">{{rev['Comment']}}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        
+    </body>
+</html>
