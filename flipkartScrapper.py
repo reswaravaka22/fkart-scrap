@@ -6,8 +6,8 @@ import requests
 import logging
 import pandas as pd
 logging.basicConfig(filename="fkartscrap.log" , level=logging.INFO)
-app=Flask(__name__)
-
+flipkartScrapper=Flask(__name__)
+app=flipkartScrapper
 @app.route('/',methods=["GET"])
 def home():
     return render_template('index.html')
