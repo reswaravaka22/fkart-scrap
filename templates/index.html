@@ -1,0 +1,60 @@
+<html>
+    <body style="background-color: rgb(154, 206, 238);">
+    <style>
+        .button{
+            background-color: rgb(22, 61, 85);
+            border-radius: 25px;
+            border: none;
+            color: white;
+            padding: 4px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .searchbar{
+            border-radius: 15px;
+        
+        }
+        .wsites{
+            border-radius: 15px;
+        }
+        .dropbtn {
+            background-color: rgb(22, 61, 85);
+            color: white;
+            padding: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            padding: 4px 32px;
+            font-size: 12px;
+            margin: 4px 2px;
+            cursor: pointer;
+          }
+    </style>
+        <div>
+            <h1 style='text-align: center;color:rgb(22, 61, 85);'>Reviews Place</h1>
+        </div>
+        <div style='text-align: center' class='content'>
+            
+            <div class='form'>
+                <form  action='/review' method='POST'>
+                    <select class='dropbtn' id='website' name='website'>
+                        <option class='wsites' value='Flipkart'>Flipkart<option>
+                        <option class='wsites' value='Amazon'>Amazon<option>
+                    </select>
+                        <input type='text' class='searchbar' name='product_name' id='product_name'>
+                        <input type='submit' class='button' value='Get Reviews'>
+                </form>
+            </div>
+            <div>
+                
+                <marquee width="60%" direction="right" height="100px">
+                    Amazon Reviews will be available soon
+                </marquee>
+            </div>
+        </div>
+    </body>
+</html>
