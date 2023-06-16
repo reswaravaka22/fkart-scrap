@@ -8,6 +8,7 @@ import pandas as pd
 logging.basicConfig(filename="fkartscrap.log" , level=logging.INFO)
 flipkartScrapper=Flask(__name__)
 app=flipkartScrapper
+
 @app.route('/',methods=["GET"])
 def home():
     return render_template('index.html')
@@ -48,21 +49,26 @@ def reviews():
                                 comment='No Comment'
                                 logging.info(e)
                             try:
+                                productName=prod_html.find_all("div", {"class" : "aMaAEs"})[0].div.text#productname
+                            except:
+                                pass
+                            try:
                                 customer_name=(i.div.div.find_all("p" , {"class" :"_2sc7ZR _2V5EHH" })[0].text)#customer names
                             except:
                                 customer_name='Not Available'
                                 logging.info(e)
                             try:
-                                list_of_page.append(searchString)
+                                list_of_page.append(productName)
                                 list_of_page.append(customer_name)
                                 list_of_page.append(rating)
                                 list_of_page.append(comment)
                                 list_of_lists.append(list_of_page)
+
                             except :
                                 pass
                         
                             try:
-                                my_dict={"Product_name":searchString, 
+                                my_dict={"Product_name":productName, 
                                     "Customer_name":customer_name,
                                     'Comment':comment,
                                     'Rating':rating}
@@ -77,7 +83,7 @@ def reviews():
         # Creating the DataFrame
         df = pd.DataFrame(list_of_lists, columns=['Product_name', 'Customer_name', 'Rating','Comment'])
         # Exporting the DataFrame as csv
-        df.to_csv(csvfilename, index=False, sep=';')      
+        df.to_csv(csvfilename, index=False, sep=';')
         return render_template('result.html',rev=reviews[0:(len(reviews)-1)])
         
 if __name__=='__main__':
