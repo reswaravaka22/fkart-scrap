@@ -62,6 +62,7 @@ def reviews():
                                 list_of_page.append(customer_name)
                                 list_of_page.append(rating)
                                 list_of_page.append(comment)
+                                list_of_page.append(productlink)
                                 list_of_lists.append(list_of_page)
 
                             except :
@@ -71,7 +72,8 @@ def reviews():
                                 my_dict={"Product_name":productName, 
                                     "Customer_name":customer_name,
                                     'Comment':comment,
-                                    'Rating':rating}
+                                    'Rating':rating,
+                                    'Product_link':productlink}}
                                 reviews.append(my_dict)
                             except:
                                 pass
