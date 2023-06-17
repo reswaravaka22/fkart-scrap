@@ -83,7 +83,7 @@ def reviews():
                 except Exception as e:
                     pass
         # Creating the DataFrame
-        df = pd.DataFrame(list_of_lists, columns=['Product_name', 'Customer_name', 'Rating','Comment','Product_link])
+        df = pd.DataFrame(list_of_lists, columns=['Product_name', 'Customer_name', 'Rating','Comment','Product_link'])
         # Exporting the DataFrame as csv
         df.to_csv(csvfilename, index=False, sep=';')
         return render_template('result.html',rev=reviews[0:(len(reviews)-1)])
