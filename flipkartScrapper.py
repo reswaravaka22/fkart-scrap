@@ -73,7 +73,7 @@ def reviews():
                                     "Customer_name":customer_name,
                                     'Comment':comment,
                                     'Rating':rating,
-                                    'Product_link':productlink}}
+                                    'Product_link':productlink}
                                 reviews.append(my_dict)
                             except:
                                 pass
