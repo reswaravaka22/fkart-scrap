@@ -42,6 +42,7 @@
                <th style="border:2px;border-style: double;">Customer Name</th>
                <th style="border:2px;border-style: double;text-align: center;">Rating</th>
                <th style="border:2px;border-style: double;">Comment</th>
+               <th style="border:2px;border-style: double;">Proudct Link</th>
             </tr>
             {% for rev in rev %}
             <tr>
@@ -49,6 +50,7 @@
                 <td style="border:2px;border-style: double;text-align: center;">{{rev['Customer_name']}}</td>
                 <td style="border:2px;border-style: double;text-align: center;">{{rev['Rating']}}</td>
                 <td style="border:2px;border-style: double;">{{rev['Comment']}}</td>
+                <td style="border:2px;border-style: double;"><a href={{rev['Product_link']}}>Goto Product</a></td>
             </tr>
             {% endfor %}
             
